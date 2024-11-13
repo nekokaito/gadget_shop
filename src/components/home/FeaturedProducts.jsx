@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 
 const FeaturedProducts = () => {
      return (
-          <div className='flex items-center  justify-between gap-4'>
+          <div className='flex px-4 flex-col lg:flex-row items-center justify-center gap-4'>
 
 
                <ProductCard></ProductCard>
