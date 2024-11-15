@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 import { useForm } from 'react-hook-form';
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-     const { createUser } = useAuth();
+     const { userLogin, googleLogin } = useAuth();
+     const navigate = useNavigate();
 
      const {
           register,
@@ -17,7 +19,13 @@ const Login = () => {
 
      const dataSubmit = data => {
           console.log(data);
-          
+
+     }
+     const handleGoogleLogin = () => {
+          googleLogin().then(() => {
+               navigate('/');
+          });
+
      }
      return (
           <div>
@@ -66,8 +74,10 @@ const Login = () => {
                                              <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                         </label>
                                    </div>
-                                   <div className="form-control mt-6">
+                                   <div className="form-control flex flex-col gap-3 mt-6">
                                         <button type='submit' className="btn btn-primary">Login</button>
+                                        <button on onClick={handleGoogleLogin} type='submit' className="btn "> <FaGoogle /> Google</button>
+
                                    </div>
                               </form>
                          </div>

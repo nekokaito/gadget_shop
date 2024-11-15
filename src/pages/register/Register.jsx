@@ -64,6 +64,19 @@ const Register = () => {
                                    </div>
                                    <div className="form-control">
                                         <label className="label">
+                                             <span className="label-text">Role</span>
+                                        </label>
+                                        <select className="select select-bordered w-full max-w-xs"
+                                        {
+                                             ...register("role", {required:true})
+                                        }>
+                                             
+                                             <option value="buyer">Buyer</option>
+                                             <option value="seller">Seller</option>
+                                        </select>
+                                   </div>
+                                   <div className="form-control">
+                                        <label className="label">
                                              <span className="label-text">Password</span>
                                         </label>
                                         <input type="password" placeholder="password" className="input input-bordered" {
