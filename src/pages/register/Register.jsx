@@ -34,12 +34,10 @@ const Register = () => {
                // Save user data to the database
                const res = await axios.post(`${baseUrl}/users`, userData);
 
-               if (res.data.inserted) {
-                    toast.success('Successfully signed up!');
-                    navigate('/');
-               } else {
-                    toast.error('Failed to save user data.');
-               }
+
+               toast.success('Successfully signed up!');
+               navigate('/');
+
           } catch (error) {
                toast.error(error.message || 'Registration failed.');
           }
