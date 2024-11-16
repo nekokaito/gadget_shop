@@ -1,5 +1,6 @@
 import React from 'react';
 import useAuth from '../../hook/useAuth';
+import { Link } from 'react-router-dom';
 
 const UserMenu = ({ user }) => {
 
@@ -11,7 +12,7 @@ const UserMenu = ({ user }) => {
                     <img className=' w-11 rounded-full' src={`${user?.photoURL || "/profile.png"}`} alt="" />
                </div>
                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <li><a>Item 1</a></li>
+                    <li> <Link to="/dashboard">Dashboard</Link> </li>
                     <li><button onClick={userLogout} className='btn'>Logout</button></li>
                </ul>
           </div>

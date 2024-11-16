@@ -14,6 +14,7 @@ import About from './pages/about/About';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import AuthProvider from './Auth/AuthProvider';
+import DashboardLayout from './layout/dashboard/DashboardLayout';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:"/dashboard",
+    element: <DashboardLayout/>,
+    children: []
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
