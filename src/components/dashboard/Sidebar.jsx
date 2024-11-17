@@ -50,12 +50,12 @@ const Sidebar = () => {
                     {
                          data.role === 'seller' ? (<>
                               <li>
-                                   <NavLink to="/dashboard/myproducts">
+                                   <NavLink to="/dashboard/my-products">
                                         <button className="btn w-full"><BiCartAlt />My Products</button>
                                    </NavLink>
                               </li>
                               <li>
-                                   <NavLink to="/dashboard/addproduct"><button className="btn w-full"><BiCartAdd />My Products</button></NavLink>
+                                   <NavLink to="/dashboard/add-product"><button className="btn w-full"><BiCartAdd />My Products</button></NavLink>
                               </li></>) : ('Null')
                     }
 

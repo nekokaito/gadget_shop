@@ -17,6 +17,8 @@ import AuthProvider from './Auth/AuthProvider';
 import DashboardLayout from './layout/dashboard/DashboardLayout';
 import PrivateRoute from './routes/Private/PrivateRoute';
 import Overview from './pages/dashboard/Overview';
+import SellerRoute from './routes/SellerRoute';
+import MyProducts from './pages/dashboard/seller/MyProducts';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/overview",
         element: <Overview></Overview>
+      },
+      //Seller Routes
+      {
+        path: "/dashboard/my-products",
+        element: <SellerRoute><MyProducts /></SellerRoute>
       }
     ]
   }
