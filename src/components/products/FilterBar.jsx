@@ -1,4 +1,3 @@
-import { CiFilter } from "react-icons/ci";
 import { GrPowerReset } from "react-icons/gr";
 import { TbFilter } from "react-icons/tb";
 

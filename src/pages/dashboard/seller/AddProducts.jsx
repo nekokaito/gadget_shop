@@ -16,6 +16,7 @@ const AddProducts = () => {
           const title = data.title;
           const image = data.image;
           const brand = data.brand;
+          const stock = data.stock;
           const price = parseFloat(data.price);
           const category = data.category;
           const description = data.description;
@@ -56,7 +57,7 @@ const AddProducts = () => {
                               type="text"
                               placeholder="Product Title"
                               className="input input-bordered"
-                              {...register('name', { required: 'Product Title is required' })}
+                              {...register('title', { required: 'Product Title is required' })}
                          />
                          {errors.title && <p className="text-red-500">{errors.name.message}</p>}
                     </div>
