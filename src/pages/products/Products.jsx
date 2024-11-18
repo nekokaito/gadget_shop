@@ -1,5 +1,7 @@
 import React from 'react';
 import SearchBar from '../../components/products/SearchBar';
+import SortByPrice from '../../components/products/SortByPrice';
+import FilterBar from '../../components/products/FilterBar';
 
 const Products = () => {
      return (
@@ -8,11 +10,13 @@ const Products = () => {
 
                <div className='flex justify-between items-center w-full mb-6'>
                     <SearchBar></SearchBar>
-                    <h1>Sorting</h1>
+                    <SortByPrice></SortByPrice>
                </div>
 
                <div className='grid gird-cols-12 w-full'>
-                    <div className='col-span-2'>Filter</div>
+                    <div className='col-span-2'>
+                         <FilterBar></FilterBar>
+                    </div>
                     <div className='col-span-10'>Products</div>
 
                </div>
