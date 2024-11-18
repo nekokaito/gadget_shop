@@ -1,8 +1,8 @@
 
 
-const SortByPrice = () => {
+const SortByPrice = ({ setSortPrice }) => {
      return (
-          <select className="select select-bordered w-full max-w-xs p-[11px] lg:w-40">
+          <select className="select select-bordered w-full max-w-xs p-[11px] lg:w-40" onChange={(e) => setSortPrice(e.target.value)}>
                <option value='asc'>Low to High</option>
                <option value='desc'>Hight to Low</option>
           </select>

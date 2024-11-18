@@ -27,6 +27,7 @@ const AddProducts = () => {
                title,
                image,
                brand,
+               stock,
                price,
                category,
                description,
