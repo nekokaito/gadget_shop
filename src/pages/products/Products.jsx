@@ -13,7 +13,7 @@ const Products = () => {
                     <SortByPrice></SortByPrice>
                </div>
 
-               <div className='grid gird-cols-12 w-full'>
+               <div className='grid  grid-cols-12 w-full'>
                     <div className='col-span-2'>
                          <FilterBar></FilterBar>
                     </div>
