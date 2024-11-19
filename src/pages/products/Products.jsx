@@ -17,13 +17,19 @@ const Products = () => {
      const [sortPrice, setSortPrice] = useState('asc');
      const [sortBrand, setSortBrand] = useState('');
      const [sortCategory, setSortCategory] = useState('');
+     const [Brands, setBrands] = useState('');
+     const [Categories, setCategories] = useState('');
 
 
      useEffect(() => {
           setLoading(true);
           const fetch = async () => {
                axios.get(`${baseUrl}/all-products?title=${search}&sort=${sortPrice}&brand=${sortBrand}&category=${sortCategory}`).then((res) => {
-                    setProducts(res.data);
+                    console.log(res.data)
+                    setProducts(res.data.product);
+                    setBrands(res.data.brands);
+                    console.log(res.data.brands)
+                    setCategories(res.data.categories);
                     setLoading(false);
                })
           }
@@ -58,7 +64,7 @@ const Products = () => {
 
                <div className='grid  grid-cols-12 w-full'>
                     <div className='col-span-2'>
-                         <FilterBar setSortBrand={setSortBrand} setSortCategory={setSortCategory} handleReset={handleReset}></FilterBar>
+                         <FilterBar setSortBrand={setSortBrand} setSortCategory={setSortCategory} Brands={Brands} Categories={Categories} handleReset={handleReset} ></FilterBar>
                     </div>
                     <div className="ml-10 col-span-10"> {loading ? <Loading /> :
                          <> {products.length === 0 ? <div className="min-w-full min-h-screen flex justify-center items-center">
