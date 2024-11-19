@@ -22,14 +22,14 @@ const Products = () => {
      useEffect(() => {
           setLoading(true);
           const fetch = async () => {
-               axios.get(`${baseUrl}/all-products`).then((res) => {
+               axios.get(`${baseUrl}/all-products?title=${search}&sort=${sortPrice}&brand=${sortBrand}&category=${sortCategory}`).then((res) => {
                     setProducts(res.data);
                     setLoading(false);
                })
           }
 
           fetch();
-     }, [])
+     }, [search, sortPrice, sortBrand, sortCategory])
 
 
      const handleSearch = (e) => {
@@ -39,7 +39,13 @@ const Products = () => {
           e.target.search.value = "";
      }
 
-     console.log(sortPrice);
+     const handleReset = () => {
+          setSearch('');
+          setSortBrand('');
+          setSortCategory('');
+          setSortPrice('asc');
+          window.location.reload();
+     }
 
      return (
           <div className='container mx-auto'>
@@ -52,7 +58,7 @@ const Products = () => {
 
                <div className='grid  grid-cols-12 w-full'>
                     <div className='col-span-2'>
-                         <FilterBar sortCategory={sortCategory} setSortCategory={setSortCategory}></FilterBar>
+                         <FilterBar setSortBrand={setSortBrand} setSortCategory={setSortCategory} handleReset={handleReset}></FilterBar>
                     </div>
                     <div className="ml-10 col-span-10"> {loading ? <Loading /> :
                          <> {products.length === 0 ? <div className="min-w-full min-h-screen flex justify-center items-center">
