@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { updateProfile } from 'firebase/auth';
@@ -83,9 +83,7 @@ const Register = () => {
                                         <span className="label-text">Role</span>
                                    </label>
                                    <select
-                                        className="select select-bordered w-full max-w-xs"
-                                        {...register('role', { required: 'Role is required' })}
-                                   >
+                                        className="select select-bordered w-full max-w-xs" >
                                         <option value="buyer">Buyer</option>
                                         <option value="seller">Seller</option>
                                    </select>
